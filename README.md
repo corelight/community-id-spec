@@ -3,7 +3,7 @@ Community ID Flow Hashing
 
 This spec describes a "community ID" flow hashing algorithm allowing
 the consumers of output from multiple traffic monitors to link each
-system's flow information.
+system's flow records more easily.
 
 Technical details
 -----------------
@@ -12,6 +12,10 @@ Technical details
   replace existing flow identification mechanisms already supported by
   the monitors. It's okay, however, for a monitor to be configured to
   log only the community ID, if desirable.
+
+- The community ID can be computed as a monitor produces flows, or can
+  also be added to existing flow records at a later stage assuming
+  that said records convey all the needed flow endpoint information.
 
 - Collisions in the community ID, while undesirable, are not
   considered fatal, since the user should still possess the monitor's
@@ -70,9 +74,15 @@ Technical details
   simply means that flow correlation with other tools that support
   such constellations.
 
+- An implementation of the hashing algorithm exists for Bro and is
+  underway for Suricata.
+
 - All of the above is preliminary and feedback from the community,
   particularly implementers, is greatly appreciated. Please contact
   Christian Kreibich (christian@corelight.com).
+
+- Many thanks for helpful discussion and feedback to Victor Julien,
+  Johanna Amann, and Robin Sommer.
 
 
 Reference implementation
