@@ -20,18 +20,19 @@ Technical details
 - Collisions in the community ID, while undesirable, are not
   considered fatal, since the user should still possess the monitor's
   native ID mechanism (hopefully stronger than the community ID)
-  output available for disambiguation.
+  for disambiguation.
 
 - The hashing mechanism uses seeding to enable additional control;
   this mechanism gets out of the way so it doesn't affect operation
   for operators not interested in it.
 
 - The hash algorithm is SHA1. Future hash versions may switch it or
-  allow additional configuration. The overall hashed flow tuple data
-  align on 32-bit boundary.
+  allow additional configuration.
 
-- The SHA1 result gets base64-encoded to reduce output volume compared
-  to the usual ASCII-based SHA1 representation.
+- The binary 20-byte SHA1 result gets base64-encoded to reduce output
+  volume compared to the usual ASCII-based SHA1 representation. This
+  assumes that space, not computation time, is the primary concern,
+  and may become configurable in a later version.
 
 - The resulting flow ID includes a version number to make the
   underlying community ID implementation explicit. This allows users
