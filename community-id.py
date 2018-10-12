@@ -327,6 +327,8 @@ class CommunityIDHasher(object):
 
         self._log('-> ' + res + '\n')
 
+        return res
+
     def _log(self, msg):
         """
         Logging helper: in verbose mode, writes given message string to stderr.
