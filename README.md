@@ -75,8 +75,8 @@ Technical details
   simply means that flow correlation with other tools that support
   such constellations.
 
-- An implementation of the hashing algorithm exists for Bro and is
-  underway for Suricata.
+- An implementation of the hashing algorithm exists for Bro and
+  Suricata 4.1+.
 
 - All of the above is preliminary and feedback from the community,
   particularly implementers, is greatly appreciated. Please contact
@@ -84,7 +84,6 @@ Technical details
 
 - Many thanks for helpful discussion and feedback to Victor Julien,
   Johanna Amann, and Robin Sommer.
-
 
 Reference implementation
 ------------------------
@@ -112,3 +111,14 @@ byte layout of the hashed values (see packet_get_comm_id()). See
 For troubleshooting, the implementation supports omitting the base64
 operation, and can provide additional detail about the exact sequence
 of bytes going into the SHA1 hash computation.
+
+Talks
+-----
+
+- SuriCon 2018: http://icir.org/christian/talks/2018-11-suricon-communityid.pdf
+
+Discussion
+----------
+
+Feel free to discuss aspects of the Community ID via GitHub here:
+https://github.com/corelight/community-id-spec/issues
