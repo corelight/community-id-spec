@@ -71,6 +71,7 @@ class ICMPHelper(object):
             dpkt.icmp.ICMP_INFO:            dpkt.icmp.ICMP_INFOREPLY,
             dpkt.icmp.ICMP_INFOREPLY:       dpkt.icmp.ICMP_INFO,
             dpkt.icmp.ICMP_RTRSOLICIT:      dpkt.icmp.ICMP_RTRADVERT,
+            dpkt.icmp.ICMP_RTRADVERT:       dpkt.icmp.ICMP_RTRSOLICIT,
             dpkt.icmp.ICMP_MASK:            dpkt.icmp.ICMP_MASKREPLY,
             dpkt.icmp.ICMP_MASKREPLY:       dpkt.icmp.ICMP_MASK,
         }
