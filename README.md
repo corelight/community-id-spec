@@ -75,9 +75,6 @@ Technical details
   simply means that flow correlation with other tools that support
   such constellations.
 
-- An implementation of the hashing algorithm exists for Bro and
-  Suricata 4.1+.
-
 - All of the above is preliminary and feedback from the community,
   particularly implementers, is greatly appreciated. Please contact
   Christian Kreibich (christian@corelight.com).
@@ -111,6 +108,13 @@ byte layout of the hashed values (see packet_get_comm_id()). See
 For troubleshooting, the implementation supports omitting the base64
 operation, and can provide additional detail about the exact sequence
 of bytes going into the SHA1 hash computation.
+
+Production implementations
+--------------------------
+
+- Elastic Beat: https://www.elastic.co/guide/en/beats/auditbeat/master/community-id.html
+- Suricata 4.1+: https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
+- Zeek package: https://github.com/corelight/bro-community-id
 
 Talks
 -----
