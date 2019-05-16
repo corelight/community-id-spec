@@ -114,8 +114,9 @@ Production implementations
 
 - Elastic Beat: https://www.elastic.co/guide/en/beats/auditbeat/master/community-id.html
 - Elastic Common Schema: https://github.com/elastic/ecs/blob/master/schemas/network.yml
-- Suricata 4.1+: https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
-- Zeek package: https://github.com/corelight/bro-community-id
+- Moloch (1.7.0+): https://github.com/aol/moloch/issues/966
+- Suricata (4.1+): https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
+- Zeek package (2.5+): https://github.com/corelight/bro-community-id
 
 Talks
 -----
