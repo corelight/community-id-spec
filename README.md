@@ -85,9 +85,15 @@ Technical details
 Reference implementation
 ------------------------
 
-The community-id.py Python script implements the above, including the
-byte layout of the hashed values (see packet_get_comm_id()). See
---help and make.sh to get started:
+A complete implementation is available in the
+[pycommunityid](https://github.com/corelight/pycommunityid) package.
+It includes a range of tests to verify correct computation for the
+various protocols. We recommend it to guide new implementations.
+
+A smaller implementation is also available via the community-id.py
+script in this repository, including the byte layout of the hashed
+values (see packet_get_comm_id()). See --help and make.sh to get
+started:
 
 ```
   $ ./community-id.py --help
@@ -117,6 +123,17 @@ Production implementations
 - Moloch (1.7.0+): https://github.com/aol/moloch/issues/966
 - Suricata (4.1+): https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
 - Zeek package (2.5+): https://github.com/corelight/bro-community-id
+
+Intent to support
+-----------------
+
+- https://www.d4-project.org
+- https://www.misp-project.org
+
+Feature requests in other projects
+----------------------------------
+
+- https://github.com/MicrosoftDocs/sysinternals/issues/219
 
 Talks
 -----
