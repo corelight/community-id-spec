@@ -120,6 +120,7 @@ Production implementations
 
 - Elastic Beats: e.g. https://www.elastic.co/guide/en/beats/packetbeat/master/community-id.html
 - Elastic Common Schema: https://github.com/elastic/ecs/blob/master/schemas/network.yml
+- HELK: https://github.com/Cyb3rWard0g/HELK (with [Ruby implementation](https://github.com/Cyb3rWard0g/HELK/commit/e81a98a745a4d02acc9d346865aeb312b3ee599d#diff-81497c6343ac648c68637062cf1ba082))
 - Moloch (1.7.0+): https://github.com/aol/moloch/issues/966
 - Suricata (4.1+): https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
 - Zeek package (2.5+): https://github.com/corelight/bro-community-id
