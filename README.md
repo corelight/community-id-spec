@@ -1,33 +1,75 @@
 Community ID Flow Hashing
 =========================
 
-This spec describes a "community ID" flow hashing algorithm allowing
-the consumers of output from multiple traffic monitors to link each
-system's flow records more easily.
+When processing flow data from a variety of monitoring applications
+(such as Zeek and Suricata), it's often desirable to pivot quickly
+from one dataset to another. While the required flow tuple information
+is usually present in both datasets, the details of such "joins" can
+be tedious, particular in corner cases. This spec describes "Community
+ID" flow hashing, standardizing the production of a string identifier
+representing a given network flow, to reduce the pivot to a simple
+string comparison.
+
+Pseudo code
+-----------
+
+    function community_id_v1(ipaddr saddr, ipaddr daddr, port sport, port dport, int proto, int seed=0)
+    {
+        # Get seed and all tuple parts into network byte order
+        seed = pack_to_nbo(seed); # 2 bytes
+        saddr = pack_to_nbo(saddr); # 4 or 16 bytes
+        daddr = pack_to_nbo(daddr); # 4 or 16 bytes
+        sport = pack_to_nbo(sport); # 2 bytes
+        dport = pack_to_nbo(dport); # 2 bytes
+
+        # Flip the endpoints as needed to abstract away directionality
+        saddr, daddr, sport, dport = order_endpoints(saddr, daddr, sport, dport);
+
+        # Produce 20-byte SHA1 digest. "." means concatenation. The
+        # proto value is one byte in length and followed by a 0 byte
+        # for padding.
+        sha1_digest = sha1(seed . saddr . daddr . proto . 0 . sport . dport)
+
+        # Prepend version string to base64 rendering of the digest.
+        # v1 is currently the only one available.
+        return "1:" + base64(sha1_digest)
+    }
+    
+    function community_id_icmp(int seed, ipaddr saddr, ipaddr daddr, int type, int code)
+    {
+        port sport, dport;
+
+        # ICMP / ICMPv6 endpoint mapping directly inspired by Zeek
+        sport, dport = map_icmp_to_ports(type, code);
+
+        return community_id(seed, saddr, daddr, sport, dport);
+    }
+
 
 Technical details
 -----------------
 
-- The community ID is an additional flow identifier and doesn't need to
+- The Community ID is an additional flow identifier and doesn't need to
   replace existing flow identification mechanisms already supported by
   the monitors. It's okay, however, for a monitor to be configured to
-  log only the community ID, if desirable.
+  log only the Community ID, if desirable.
 
-- The community ID can be computed as a monitor produces flows, or can
+- The Community ID can be computed as a monitor produces flows, or can
   also be added to existing flow records at a later stage assuming
   that said records convey all the needed flow endpoint information.
 
-- Collisions in the community ID, while undesirable, are not
-  considered fatal, since the user should still possess the monitor's
-  native ID mechanism (hopefully stronger than the community ID)
-  for disambiguation.
+- Collisions in the Community ID, while undesirable, are not
+  considered fatal, since the user should still possess flow timing
+  information and possibly the monitor's native ID mechanism (hopefully
+  stronger than the Community ID) for disambiguation.
 
-- The hashing mechanism uses seeding to enable additional control;
-  this mechanism gets out of the way so it doesn't affect operation
-  for operators not interested in it.
+- The hashing mechanism uses seeding to enable additional control over
+  "domains" of Community ID usage. The seed defaults to 0, so this
+  mechanism gets out of the way so it doesn't affect operation for
+  operators not interested in it.
 
-- The hash algorithm is SHA1. Future hash versions may switch it or
-  allow additional configuration.
+- In version 1 of the ID, the hash algorithm is SHA1. Future hash
+  versions may switch it or allow additional configuration.
 
 - The binary 20-byte SHA1 result gets base64-encoded to reduce output
   volume compared to the usual ASCII-based SHA1 representation. This
@@ -35,7 +77,7 @@ Technical details
   and may become configurable in a later version.
 
 - The resulting flow ID includes a version number to make the
-  underlying community ID implementation explicit. This allows users
+  underlying Community ID implementation explicit. This allows users
   to ensure they're comparing apples to apples while supporting future
   changes to the algorithm. For example, when one monitor's version of
   the ID incorporates VLAN IDs but another's does not, hash value
@@ -62,6 +104,13 @@ Technical details
 
     IP src / IP dst / IP proto / ICMP type + "counter-type" or code
 
+    The exact handling of ICMP type & code is taken from Zeek; see
+    implementations here:
+
+    https://github.com/corelight/pycommunityid/blob/master/communityid/icmp.py
+    https://github.com/corelight/pycommunityid/blob/master/communityid/icmp6.py
+    https://github.com/zeek/zeek/blob/master/src/analyzer/protocol/icmp/ICMP.cc#L860
+
   - Other IP-borne protocols:
 
     IP src / IP dst / IP proto
@@ -71,16 +120,17 @@ Technical details
 
 - If a network monitor doesn't support any of the above protocol
   constellations, it can safely report an empty string (or another
-  non-colliding value) for the flow ID. Absence of a flow ID value
-  simply means that flow correlation with other tools that support
-  such constellations.
+  non-colliding value) for the flow ID.
 
-- All of the above is preliminary and feedback from the community,
-  particularly implementers, is greatly appreciated. Please contact
-  Christian Kreibich (christian@corelight.com).
+- Consider v1 a prototype. Feedback from the community, particularly
+  implementers and operational users of the ID, is _greatly_
+  appreciated. Please create issues directly in the GitHub project at
+  https://github.com/corelight/community-id-spec, or contact Christian
+  Kreibich (christian@corelight.com).
 
 - Many thanks for helpful discussion and feedback to Victor Julien,
-  Johanna Amann, and Robin Sommer.
+  Johanna Amann, and Robin Sommer, and to all implementors and
+  supporters.
 
 Reference implementation
 ------------------------
