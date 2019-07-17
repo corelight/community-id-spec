@@ -107,9 +107,9 @@ Technical details
     The exact handling of ICMP type & code is taken from Zeek; see
     implementations here:
 
-    https://github.com/corelight/pycommunityid/blob/master/communityid/icmp.py
-    https://github.com/corelight/pycommunityid/blob/master/communityid/icmp6.py
-    https://github.com/zeek/zeek/blob/master/src/analyzer/protocol/icmp/ICMP.cc#L860
+    - https://github.com/corelight/pycommunityid/blob/master/communityid/icmp.py
+    - https://github.com/corelight/pycommunityid/blob/master/communityid/icmp6.py
+    - https://github.com/zeek/zeek/blob/master/src/analyzer/protocol/icmp/ICMP.cc#L860
 
   - Other IP-borne protocols:
 
