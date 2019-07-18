@@ -35,7 +35,7 @@ Pseudo code
         return "1:" + base64(sha1_digest)
     }
     
-    function community_id_icmp(int seed, ipaddr saddr, ipaddr daddr, int type, int code)
+    function community_id_icmp(int seed, ipaddr saddr, ipaddr daddr, int type, int code, int seed=0)
     {
         port sport, dport;
 
@@ -43,7 +43,7 @@ Pseudo code
         sport, dport = map_icmp_to_ports(type, code);
 
         # ICMP is IP protocol 1, ICMPv6 would be 58
-        return community_id_v1(saddr, daddr, sport, dport,  1); 
+        return community_id_v1(saddr, daddr, sport, dport, 1, seed); 
     }
 
 
