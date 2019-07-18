@@ -42,7 +42,7 @@ Pseudo code
         # ICMP / ICMPv6 endpoint mapping directly inspired by Zeek
         sport, dport = map_icmp_to_ports(type, code);
 
-        return community_id(seed, saddr, daddr, sport, dport);
+        return community_id_v1(seed, saddr, daddr, sport, dport);
     }
 
 
