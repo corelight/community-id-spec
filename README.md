@@ -166,6 +166,12 @@ For troubleshooting, the implementation supports omitting the base64
 operation, and can provide additional detail about the exact sequence
 of bytes going into the SHA1 hash computation.
 
+Reusable modules/libraries
+--------------------------
+
+- Python: https://github.com/corelight/pycommunityid
+- Golang: https://github.com/satta/gommunityid
+
 Production implementations
 --------------------------
 
