@@ -95,6 +95,12 @@ Technical details
   components use network byte order (big-endian) to standardize
   ordering regardless of host hardware.
 
+- The hash input is ordered in a standardized way to abstract away
+  directionality. For example, the following netflow 5 tuples 
+  create identical Community ID hashes:
+  - Proto: TCP; SRC IP: 10.0.0.1; DST IP: 127.0.0.1; SRC Port: 1234; DST Port: 80
+  - Proto: TCP; SRC IP: 127.0.0.1; DST IP: 10.0.0.1; SRC Port: 80; DST Port: 1234
+
 - This version includes the following protocols and fields:
 
   - TCP / UDP / SCTP:
