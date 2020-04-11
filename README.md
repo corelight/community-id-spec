@@ -184,7 +184,7 @@ Production implementations
 - Osquery (4.2.0+): https://osquery.readthedocs.io/en/latest/introduction/sql/#sql-additions
 - Suricata (4.1+): https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
 - VAST: https://github.com/vast-io/vast/pull/525
-- Zeek package (2.5+): https://github.com/corelight/bro-community-id
+- Zeek package (2.5+): https://github.com/corelight/zeek-community-id
 
 Intent to support
 -----------------
