@@ -169,6 +169,7 @@ of bytes going into the SHA1 hash computation.
 Reusable modules/libraries
 --------------------------
 
+- C: https://github.com/corelight/c-community-id
 - Golang: https://github.com/satta/gommunityid
 - Java: https://github.com/rapid7/community-id-java
 - Python: https://github.com/corelight/pycommunityid
