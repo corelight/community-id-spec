@@ -35,7 +35,7 @@ Pseudo code
         return "1:" + base64(sha1_digest)
     }
     
-    function community_id_icmp(int seed, ipaddr saddr, ipaddr daddr, int type, int code, int seed=0)
+    function community_id_icmp(ipaddr saddr, ipaddr daddr, int type, int code, int seed=0)
     {
         port sport, dport;
 
