@@ -89,7 +89,7 @@ Technical details
   The versioning scheme currently simply prefixes the hash value with
   "<version>:", yielding something like this in the current version 1:
 
-  1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=
+  `1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=`
 
 - The hash input is aligned on 32-bit-boundaries. Flow tuple
   components use network byte order (big-endian) to standardize
@@ -165,6 +165,13 @@ started:
 For troubleshooting, the implementation supports omitting the base64
 operation, and can provide additional detail about the exact sequence
 of bytes going into the SHA1 hash computation.
+
+Reference data
+--------------
+
+The [`baseline`](baseline) directory in this repo contains datasets to
+help you verify that your implementation of Community ID functions
+correctly.
 
 Reusable modules/libraries
 --------------------------
