@@ -196,6 +196,7 @@ Production implementations
 - MISP: https://www.misp-project.org/2019/07/19/MISP.2.4.111.released.html
 - Moloch (1.7.0+): https://github.com/aol/moloch/issues/966
 - Osquery (4.2.0+): https://osquery.readthedocs.io/en/latest/introduction/sql/#sql-additions
+- Security Onion (2.0+): https://docs.securityonion.net/en/2.3/community-id.html
 - Suricata (4.1+): https://suricata.readthedocs.io/en/suricata-4.1.2/output/eve/eve-json-output.html#community-flow-id
 - VAST: https://github.com/vast-io/vast/pull/525
 - Wireshark (3.3.1+): https://www.wireshark.org/news/20201001.html
