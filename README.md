@@ -22,7 +22,8 @@ Pseudo code
         sport = pack_to_nbo(sport); # 2 bytes
         dport = pack_to_nbo(dport); # 2 bytes
 
-        # Flip the endpoints as needed to abstract away directionality
+        # Abstract away directionality: flip the endpoints as needed
+        # so the smaller IP:port tuple comes first.
         saddr, daddr, sport, dport = order_endpoints(saddr, daddr, sport, dport);
 
         # Produce 20-byte SHA1 digest. "." means concatenation. The
@@ -95,9 +96,13 @@ Technical details
   components use network byte order (big-endian) to standardize
   ordering regardless of host hardware.
 
-- The hash input is ordered in a standardized way to abstract away
-  directionality. For example, the following netflow 5 tuples 
-  create identical Community ID hashes:
+- The hash input is ordered to remove directionality in the flow
+  tuple: swap the endpoints, if needed, so the numerically smaller
+  IP:port tuple comes first. If the IP addresses are equal, the ports
+  decide.  For example, the following netflow 5-tuples create
+  identical Community ID hashes because they both get ordered into
+  the sequence 10.0.0.1, 127.0.0.1, 1234, 80.
+
   - Proto: TCP; SRC IP: 10.0.0.1; DST IP: 127.0.0.1; SRC Port: 1234; DST Port: 80
   - Proto: TCP; SRC IP: 127.0.0.1; DST IP: 10.0.0.1; SRC Port: 80; DST Port: 1234
 
