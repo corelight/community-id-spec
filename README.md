@@ -192,6 +192,10 @@ Reusable modules/libraries
 - Java: https://github.com/rapid7/community-id-java
 - Python: https://github.com/corelight/pycommunityid
 
+Sought-after implementations (please get in touch if you're considering writing one of these!):
+
+- JavaScript
+
 Production implementations
 --------------------------
 
