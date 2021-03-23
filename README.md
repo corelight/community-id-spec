@@ -202,6 +202,7 @@ Production implementations
 - Arkime (1.7.0+): https://github.com/arkime/arkime/issues/966
 - Elastic Beats: e.g. https://www.elastic.co/guide/en/beats/packetbeat/master/community-id.html
 - Elastic Common Schema: https://github.com/elastic/ecs/blob/master/schemas/network.yml
+- Elasticsearch (7.12.0+): https://www.elastic.co/guide/en/elasticsearch/reference/master/community-id-processor.html
 - HELK: https://github.com/Cyb3rWard0g/HELK (with [Ruby implementation](https://github.com/Cyb3rWard0g/HELK/commit/e81a98a745a4d02acc9d346865aeb312b3ee599d#diff-81497c6343ac648c68637062cf1ba082))
 - MISP: https://www.misp-project.org/2019/07/19/MISP.2.4.111.released.html
 - Osquery (4.2.0+): https://osquery.readthedocs.io/en/latest/introduction/sql/#sql-additions, [blog post](https://dactiv.llc/blog/correlate-osquery-network-connections/)
