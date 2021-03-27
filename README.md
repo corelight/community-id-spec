@@ -188,6 +188,7 @@ Reusable modules/libraries
 --------------------------
 
 - C: https://github.com/corelight/c-community-id
+- C#: https://github.com/decompile/community-id-dotnet-core
 - Golang: https://github.com/satta/gommunityid
 - Java: https://github.com/rapid7/community-id-java
 - Python: https://github.com/corelight/pycommunityid
