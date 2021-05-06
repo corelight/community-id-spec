@@ -187,7 +187,7 @@ correctly.
 Reusable modules/libraries
 --------------------------
 
-- C: https://github.com/corelight/c-community-id
+- C: https://github.com/corelight/c-community-id and https://github.com/ntop/nDPI
 - C#: https://github.com/decompile/community-id-dotnet-core
 - Golang: https://github.com/satta/gommunityid
 - Java: https://github.com/rapid7/community-id-java
@@ -212,6 +212,7 @@ Production implementations
 - VAST: https://github.com/vast-io/vast/pull/525
 - Wireshark (3.3.1+): https://www.wireshark.org/news/20201001.html
 - Zeek package (2.5+): https://github.com/corelight/zeek-community-id
+- ntopng: https://github.com/ntop/ntopng
 
 Intent to support
 -----------------
