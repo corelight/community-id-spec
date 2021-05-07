@@ -187,7 +187,9 @@ correctly.
 Reusable modules/libraries
 --------------------------
 
-- C: https://github.com/corelight/c-community-id and https://github.com/ntop/nDPI
+- C
+  - https://github.com/corelight/c-community-id
+  - https://github.com/ntop/nDPI (details [here](https://github.com/ntop/nDPI/blob/dev/src/lib/ndpi_community_id.c))
 - C#: https://github.com/decompile/community-id-dotnet-core
 - Golang: https://github.com/satta/gommunityid
 - Java: https://github.com/rapid7/community-id-java
