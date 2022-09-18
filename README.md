@@ -230,8 +230,8 @@ Feature requests in other projects
 Talks
 -----
 
-- [SuriCon 2018](http://icir.org/christian/talks/2018-11-suricon-communityid.pdf)
-- [FOSDEM 2021](http://icir.org/christian/talks/2021-02-fosdem-communityid.pdf)
+- [SuriCon 2018](https://www.icir.org/christian/talks/2018-11-suricon-communityid.pdf)
+- [FOSDEM 2021](https://www.icir.org/christian/talks/2021-02-fosdem-communityid.pdf)
 
 Discussion
 ----------
