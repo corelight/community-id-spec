@@ -233,7 +233,7 @@ Blog posts and other resources
 ------------------------------
 
 - [Sample captures for QUIC, DoH, CommunityID, WPA3 and other protocols in CloudShark 3.10](https://www.qacafe.com/resources/sample-captures-for-quic-doh-communityid-wpa3-cloudshark-3-10), qacafe.com
-- [Correlate network connections with community ID in osqueryx](https://fleetdm.com/guides/correlate-network-connections-with-community-id-in-osquery), fleetdm.com
+- [Correlate network connections with community ID in osquery](https://fleetdm.com/guides/correlate-network-connections-with-community-id-in-osquery), fleetdm.com
 - [Generating CommunityIDs with Sysmon and Winlogbeat](https://holdmybeersecurity.com/2020/06/04/generating-communityids-with-sysmon-and-winlogbeat/), holdmybeersecurity.com
 
 Discussion
