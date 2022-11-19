@@ -218,11 +218,6 @@ Production implementations
 - Zeek package (2.5+): https://github.com/corelight/zeek-community-id
 - ntopng: https://github.com/ntop/ntopng
 
-Intent to support
------------------
-
-- https://www.d4-project.org
-
 Feature requests in other projects
 ----------------------------------
 
@@ -233,6 +228,13 @@ Talks
 
 - [SuriCon 2018](https://www.icir.org/christian/talks/2018-11-suricon-communityid.pdf)
 - [FOSDEM 2021](https://www.icir.org/christian/talks/2021-02-fosdem-communityid.pdf)
+
+Blog posts and other resources
+------------------------------
+
+- [Sample captures for QUIC, DoH, CommunityID, WPA3 and other protocols in CloudShark 3.10](https://www.qacafe.com/resources/sample-captures-for-quic-doh-communityid-wpa3-cloudshark-3-10), qacafe.com
+- [Correlate network connections with community ID in osqueryx](https://fleetdm.com/guides/correlate-network-connections-with-community-id-in-osquery), fleetdm.com
+- [Generating CommunityIDs with Sysmon and Winlogbeat](https://holdmybeersecurity.com/2020/06/04/generating-communityids-with-sysmon-and-winlogbeat/), holdmybeersecurity.com
 
 Discussion
 ----------
