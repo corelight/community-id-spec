@@ -207,6 +207,7 @@ Production implementations
 - Elastic Common Schema: https://github.com/elastic/ecs/blob/master/schemas/network.yml
 - Elasticsearch (7.12.0+): https://www.elastic.co/guide/en/elasticsearch/reference/master/community-id-processor.html
 - HELK: https://github.com/Cyb3rWard0g/HELK (with [Ruby implementation](https://github.com/Cyb3rWard0g/HELK/commit/e81a98a745a4d02acc9d346865aeb312b3ee599d#diff-81497c6343ac648c68637062cf1ba082))
+- LogScale/Humio: https://library.humio.com/falcon-logscale/functions-communityid.html
 - MISP: https://www.misp-project.org/2019/07/19/MISP.2.4.111.released.html
 - MISP-wireshark: https://github.com/MISP/misp-wireshark
 - Osquery (4.2.0+): https://osquery.readthedocs.io/en/latest/introduction/sql/#sql-additions, [blog post](https://dactiv.llc/blog/correlate-osquery-network-connections/)
