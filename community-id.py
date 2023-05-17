@@ -152,7 +152,7 @@ class CommunityIDHasher(object):
         This function processes the given pcap file name, reporting the
         community ID string for every packet in the trace.
         """
-        with open(pcapfile, 'r+b') as hdl:
+        with open(pcapfile, 'rb') as hdl:
             reader = dpkt.pcap.Reader(hdl)
             for tstamp, pktdata in reader:
                 self._packet_handle(tstamp, pktdata)
@@ -294,7 +294,14 @@ class CommunityIDHasher(object):
 
         def hash_update(data):
             if self.verbose:
-                hexbytes = ':'.join('%02x' % ord(b) for b in data)
+                # Bytes in Python 2.7 is just str and elements are
+                # also str, so need to get the byte value via ord.
+                if data and isinstance(data[0], str):
+                    bdata = [ord(b) for b in data]
+                else:
+                    # Python 3 bytes yield ints
+                    bdata = data
+                hexbytes = ':'.join('%02x' % b for b in bdata)
                 self._log(hexbytes + ' ')
             hashstate.update(data)
             return len(data)
