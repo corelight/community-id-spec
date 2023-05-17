@@ -152,7 +152,7 @@ class CommunityIDHasher(object):
         This function processes the given pcap file name, reporting the
         community ID string for every packet in the trace.
         """
-        with open(pcapfile, 'r+b') as hdl:
+        with open(pcapfile, 'rb') as hdl:
             reader = dpkt.pcap.Reader(hdl)
             for tstamp, pktdata in reader:
                 self._packet_handle(tstamp, pktdata)
