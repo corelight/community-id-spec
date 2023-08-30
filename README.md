@@ -193,11 +193,8 @@ Reusable modules/libraries
 - C#: https://github.com/decompile/community-id-dotnet-core
 - Golang: https://github.com/satta/gommunityid
 - Java: https://github.com/rapid7/community-id-java
+- JavaScript: https://github.com/corelight/communityid-js
 - Python: https://github.com/corelight/pycommunityid
-
-Sought-after implementations (please get in touch if you're considering writing one of these!):
-
-- JavaScript
 
 Production implementations
 --------------------------
