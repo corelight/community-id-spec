@@ -195,6 +195,7 @@ Reusable modules/libraries
 - Java: https://github.com/rapid7/community-id-java
 - JavaScript: https://github.com/corelight/communityid-js
 - Python: https://github.com/corelight/pycommunityid
+- Rust: https://crates.io/crates/communityid
 
 Production implementations
 --------------------------
